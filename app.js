@@ -16,17 +16,17 @@
   });
   products.forEach(function (p) {
     $('tiles').insertAdjacentHTML('beforeend',
-      '<article class="tile"><img src="' + p.img + '" alt="' + p.alt + '"><div class="tile-copy"><span class="tile-tag">' + p.time + '</span><h3 class="gl">' + p.name + '</h3><div class="tile-row"><span class="tile-price">₹' + p.price + '</span><button type="button" class="btn fill" data-add="' + p.id + '">Add to cart</button></div></div></article>');
+      '<article class="item"><div class="item-photo"><img loading="lazy" src="' + p.img + '" alt="' + p.alt + '"></div><div class="item-line"><span class="item-name">' + p.name + '</span><span>₹' + p.price + '</span></div><div class="item-sub">' + p.time + ' to cook</div><button type="button" class="more" data-add="' + p.id + '">Add to cart</button></article>');
     $('shop-list').insertAdjacentHTML('beforeend',
-      '<article class="prod"><div class="prod-photo"><img src="' + p.img + '" alt="' + p.alt + '"></div><div><span class="eyebrow">Ready to cook</span><h2 class="gl">' + p.name + '</h2><p>' + p.desc + '</p><div class="facts"><span class="fact">' + p.time + '</span><span class="fact">' + p.shelf + ' shelf life</span><span class="fact">No artificial preservatives</span></div><div class="buy"><span class="price">₹' + p.price + '</span><button type="button" class="btn red" data-add="' + p.id + '">Add to cart</button></div></div></article>');
+      '<article class="prod"><div class="prod-photo"><img loading="lazy" src="' + p.img + '" alt="' + p.alt + '"></div><div><h2>' + p.name + '</h2><p>' + p.desc + '</p><p class="facts">' + p.time + ' to cook. ' + p.shelf + ' shelf life. No artificial preservatives.</p><div class="buy"><span>₹' + p.price + '</span><button type="button" class="btn" data-add="' + p.id + '">Add to cart</button></div></div></article>');
     $('cook-list').insertAdjacentHTML('beforeend',
-      '<article class="rec"><div class="video"><span>[VIDEO: how to cook with ' + p.name + ']</span></div><div><span class="eyebrow">' + p.time + '</span><h2 class="gl">' + p.name + '</h2><ol>' +
+      '<article class="rec"><div class="video"><span>[VIDEO: how to cook with ' + p.name + ']</span></div><div><h2>' + p.name + '</h2><p class="time">' + p.time + '</p><ol>' +
       p.steps.map(function (s, i) { return '<li><span>' + (i + 1) + '</span>' + s + '</li>'; }).join('') + '</ol></div></article>');
   });
 
   // pages
   function solidTop() {
-    $('top').classList.toggle('solid', window.scrollY > 60 || page !== 'home' || !$('sheet').hidden);
+    $('top').classList.toggle('solid', window.scrollY > 20);
   }
   function show(id, instant) {
     page = id;
@@ -166,7 +166,7 @@
     } catch (err) {}
   }
   function confetti() {
-    var colors = ['#9B2F17', '#7A2211', '#DE9B2C', '#EDB04A', '#26160F', '#C4581F'];
+    var colors = ['#6F2317', '#8E3A26', '#B8863B', '#D9B778', '#2B1E17', '#A65A33'];
     for (var i = 0; i < 90; i++) {
       var el = document.createElement('div');
       var size = (Math.random() * 8 + 5).toFixed(1) + 'px';
@@ -200,7 +200,7 @@
     dots.forEach(function (p) {
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(155,47,23,' + p.o + ')';
+      ctx.fillStyle = 'rgba(111,35,23,' + p.o + ')';
       ctx.fill();
       p.x += p.dx;
       p.y += p.dy;

@@ -4,14 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Anytime Food</title>
-<meta name="description" content="Anytime Food makes Andhra chicken curry and biryani pastes in Vijayawada. Ready to cook, any time.">
+<meta name="description" content="Anytime Food makes Andhra chicken curry and biryani pastes in Vijayawada.">
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&family=Hanken+Grotesk:wght@400;500&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="atf">
 
 <div id="atf-splash">
 <canvas id="splash-canvas" aria-hidden="true"></canvas>
@@ -31,13 +30,13 @@
 </div>
 
 <header class="top" id="top">
+<nav class="links" id="links" aria-label="Main"></nav>
 <button type="button" class="logo-btn" data-go="home" aria-label="Anytime Food home">
 <img src="assets/logo.png" alt="Anytime Food">
 </button>
-<nav class="links" id="links" aria-label="Main"></nav>
 <div class="top-right">
 <button type="button" class="burger" id="burger">Menu</button>
-<button type="button" class="cart-pill" data-cart>Cart · <span id="cart-count">0</span></button>
+<button type="button" class="cart-link" data-cart>Cart (<span id="cart-count">0</span>)</button>
 </div>
 </header>
 
@@ -46,97 +45,46 @@
 <main>
 <div data-page="home">
 <section class="hero">
-<img class="hero-photo" src="assets/hero-chicken-curry.jpg" alt="Pan of spiced chicken curry with green chillies and coriander">
-<div class="hero-shade"></div>
-<div class="hero-copy">
-<h1 class="gl">Dinner,<br>any time.</h1>
-<div class="hero-side">
-<p>Andhra curry and biryani pastes that do the hard part. You just bring the chicken.</p>
-<button type="button" class="btn fill" data-go="shop">Shop the pastes</button>
+<div class="hero-text">
+<h1>Andhra cooking,<br>kept in a jar.</h1>
+<p>Curry and biryani pastes made in Vijayawada from whole spices, fresh coconut and sun-dried red chillies.</p>
+<button type="button" class="more" data-go="shop">See the pastes</button>
 </div>
-</div>
+<div class="hero-photo"><img src="assets/hero-chicken-curry.jpg" alt="Pan of spiced chicken curry with green chillies and coriander"></div>
 </section>
 
-<section class="intro">
-<div class="wrap intro-grid">
-<h2 class="gl rise">All the flavour of slow cooking, <em>none of the grinding.</em></h2>
-<p class="rise">Every jar starts with a proper Andhra recipe and the spices already done. Open it, add it to the pan, and a home-style meal is on the table.</p>
-</div>
+<section class="range wrap reveal">
+<h2>The pastes</h2>
+<div class="pair-items" id="tiles"></div>
 </section>
 
-<section class="duo" id="tiles" aria-label="Our products"></section>
-
-<section class="band">
+<section class="wide reveal">
 <img src="assets/spices.jpg" alt="Whole and ground Indian spices with curry leaves">
-<div class="band-shade"></div>
-<div class="band-copy">
-<h2 class="gl rise">What's in the jar stays simple.</h2>
-<ul class="pantry rise">
-<li>Whole spices</li>
-<li>Fresh coconut</li>
-<li>Sun-dried red chillies</li>
-<li>Ginger, garlic and saffron</li>
-<li>No artificial preservatives</li>
-</ul>
-</div>
 </section>
 
-<section class="how">
-<div class="wrap how-grid">
-<div class="how-photo rise"><img src="assets/masala-box.jpg" alt="Round steel masala box filled with spices"></div>
-<div>
-<h2 class="gl rise">Three things to do.</h2>
-<ol class="how-steps">
-<li class="rise"><span class="how-num">1</span><div><h3>Heat the paste</h3><p>A spoon or two in hot oil, until the kitchen smells right.</p></div></li>
-<li class="rise"><span class="how-num">2</span><div><h3>Add your chicken</h3><p>Coat it well and let the paste get to work.</p></div></li>
-<li class="rise"><span class="how-num">3</span><div><h3>Simmer and serve</h3><p>Hot, with rice or roti, and take the credit.</p></div></li>
-</ol>
-<button type="button" class="btn red" style="margin-top: 26px" data-go="steps">Watch how to cook</button>
-</div>
-</div>
-</section>
-
-<section class="closer">
-<img src="assets/curry-pot.jpg" alt="Creamy curry being stirred in a dark pot">
-<div class="closer-shade"></div>
-<div class="closer-copy">
-<h2 class="gl rise">Hungry yet?</h2>
-<button type="button" class="btn fill rise" data-go="shop">Order now</button>
-</div>
+<section class="note wrap reveal">
+<p>We started Anytime Food in Vijayawada because a proper meal shouldn't depend on how much time you have. The long part of the recipe goes in the jar. The rest takes minutes.</p>
+<button type="button" class="more" data-go="about">Our story</button>
 </section>
 </div>
 
 <div data-page="shop" hidden>
 <div class="wrap">
-<div class="head">
-<span class="eyebrow">Shop</span>
-<h1 class="gl">The pastes</h1>
-<p>Two jars. Both ready to cook.</p>
-</div>
+<div class="head"><h1>The pastes</h1></div>
 <div id="shop-list"></div>
-<div style="height: 90px"></div>
 </div>
 </div>
 
 <div data-page="cook" hidden>
 <div class="wrap">
-<div class="head">
-<span class="eyebrow">How to cook</span>
-<h1 class="gl">Easier than it looks.</h1>
-<p>Two short videos, one for each jar. The steps are right beside them.</p>
-</div>
+<div class="head"><h1>How to cook</h1></div>
 <div id="cook-list"></div>
-<div style="height: 90px"></div>
 </div>
 </div>
 
 <div data-page="steps" hidden>
-<div class="wrap">
-<div class="head">
-<span class="eyebrow">Cooking instructions</span>
-<h1 class="gl">Chicken curry, three steps.</h1>
-<p>Press play to see how it's done with one jar of Chicken Curry Paste.</p>
-</div>
+<div class="wrap narrow">
+<div class="head"><h1>Chicken curry</h1><p>With one jar of Chicken Curry Paste.</p></div>
 <div class="reel paused" id="reel">
 <img src="assets/step-chicken.jpg" alt="Pieces of chicken browning in a pan">
 <img src="assets/step-paste.jpg" alt="Bowl of red curry paste">
@@ -144,9 +92,9 @@
 <img src="assets/step-simmer.jpg" alt="Curry simmering with a ladle">
 <img src="assets/chicken-curry-served.jpg" alt="Finished chicken curry ready to eat">
 <div class="reel-shade"></div>
-<div class="reel-cap"><span id="reel-tag"></span><div class="gl" id="reel-title"></div></div>
+<div class="reel-cap"><span id="reel-tag"></span><div id="reel-title"></div></div>
 <button type="button" class="reel-play" id="reel-play" aria-label="Play the cooking video">
-<svg aria-hidden="true" width="36" height="36" viewBox="0 0 34 34" fill="#26160F"><path d="M11 6.5v21a1.5 1.5 0 0 0 2.3 1.3l16-10.5a1.5 1.5 0 0 0 0-2.6l-16-10.5A1.5 1.5 0 0 0 11 6.5z"></path></svg>
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 34 34" fill="#FBF7F0"><path d="M11 6.5v21a1.5 1.5 0 0 0 2.3 1.3l16-10.5a1.5 1.5 0 0 0 0-2.6l-16-10.5A1.5 1.5 0 0 0 11 6.5z"></path></svg>
 </button>
 </div>
 <div class="reel-bar"><div class="reel-fill" id="reel-fill"></div></div>
@@ -155,43 +103,35 @@
 <span class="reel-time" id="reel-time">0:00 / 0:25</span>
 </div>
 <ol class="method">
-<li><span class="eyebrow">Step 1</span><h2 class="gl">Cook the chicken</h2><p>Cook the chicken in a pan until it's done.</p></li>
-<li><span class="eyebrow">Step 2</span><h2 class="gl">Add the curry paste</h2><p>Once the chicken is cooked, stir in the curry paste.</p></li>
-<li><span class="eyebrow">Step 3</span><h2 class="gl">Add water and wait</h2><p>Add water and wait for a few minutes. Then it's ready.</p></li>
+<li><h2>Cook the chicken</h2><p>Cook the chicken in a pan until it's done.</p></li>
+<li><h2>Add the curry paste</h2><p>Once the chicken is cooked, stir in the curry paste.</p></li>
+<li><h2>Add water and wait</h2><p>Add water and wait for a few minutes. Then it's ready.</p></li>
 </ol>
 </div>
 </div>
 
 <div data-page="about" hidden>
 <div class="wrap">
-<div class="head">
-<span class="eyebrow">About us</span>
-<h1 class="gl">From Vijayawada, with love.</h1>
-</div>
+<div class="head"><h1>Our story</h1></div>
 <section class="story">
-<div class="story-photo"><img src="assets/spices.jpg" alt="Whole and ground Indian spices"></div>
 <div class="story-text">
-<h2 class="gl">Less time shouldn't mean worse food.</h2>
-<p>People have less time than ever, but they still deserve real, home-style Indian food. That's why we started Anytime Food in Vijayawada, the heart of Andhra cooking.</p>
+<p>People have less time than ever, but they still deserve real, home-style Indian food. That's why we started Anytime Food in Vijayawada, in the heart of Andhra cooking.</p>
 <p>We put the long part of the recipe in a jar, so a proper meal is never out of reach, wherever you are in the world.</p>
-<div><button type="button" class="btn red" data-go="contact">Say hello</button></div>
+<button type="button" class="more" data-go="contact">Contact us</button>
 </div>
+<div class="story-photo"><img src="assets/spices.jpg" alt="Whole and ground Indian spices"></div>
 </section>
 </div>
 </div>
 
 <div data-page="contact" hidden>
 <div class="wrap">
-<div class="head">
-<span class="eyebrow">Contact</span>
-<h1 class="gl">Talk to us.</h1>
-<p>Orders, shops, distribution or export, we'd love to hear from you.</p>
-</div>
+<div class="head"><h1>Contact</h1><p>For orders, shops, distribution or export.</p></div>
 <section class="form-grid">
 <div class="info">
-<div><span class="eyebrow">Address</span><div>ATF Anytime Food Pvt. Ltd.<br>Vijayawada, Andhra Pradesh<br>India — 520 001</div></div>
-<div><span class="eyebrow">Phone</span><div>+91 99999 99999</div></div>
-<div><span class="eyebrow">Email</span><div>hello@atffood.com</div></div>
+<div><span class="key">Address</span>ATF Anytime Food Pvt. Ltd.<br>Vijayawada, Andhra Pradesh<br>India 520 001</div>
+<div><span class="key">Phone</span>+91 99999 99999</div>
+<div><span class="key">Email</span>hello@atffood.com</div>
 </div>
 <div>
 <div class="pair">
@@ -199,7 +139,7 @@
 <div class="field"><label for="c-email">Email</label><input id="c-email" class="input" type="email" autocomplete="email"></div>
 </div>
 <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" class="input"></textarea></div>
-<button type="button" class="btn red" id="c-send">Send message</button>
+<button type="button" class="btn" id="c-send">Send message</button>
 <p id="c-note" class="soon" hidden>This form isn't connected yet. Please email hello@atffood.com.</p>
 </div>
 </section>
@@ -208,10 +148,7 @@
 
 <div data-page="checkout" hidden>
 <div class="wrap">
-<div class="head">
-<span class="eyebrow">Order</span>
-<h1 class="gl">Nearly dinner.</h1>
-</div>
+<div class="head"><h1>Checkout</h1></div>
 <section class="form-grid checkout">
 <div>
 <div class="pair">
@@ -223,13 +160,13 @@
 <div class="field"><label for="co-city">City</label><input id="co-city" class="input" type="text" autocomplete="address-level2"></div>
 <div class="field"><label for="co-pin">Pin code</label><input id="co-pin" class="input" type="text" autocomplete="postal-code"></div>
 </div>
-<button type="button" class="btn red wide" id="co-place">Place order</button>
+<button type="button" class="btn" id="co-place">Place order</button>
 <p id="co-note" class="soon" hidden>Online ordering isn't open yet, so no order was placed. Please message us on WhatsApp to order.</p>
 </div>
 <div class="summary">
-<h2 class="gl">Your order</h2>
+<h2>Your order</h2>
 <div id="co-items"></div>
-<div class="total"><span>Total</span><span class="price" id="co-total">₹0</span></div>
+<div class="total"><span>Total</span><span id="co-total">₹0</span></div>
 </div>
 </section>
 </div>
@@ -237,38 +174,32 @@
 </main>
 
 <footer>
-<div class="wrap">
-<div class="foot">
-<h2 class="gl">Any time<br>is food time.</h2>
+<div class="wrap foot">
+<div class="foot-brand">Anytime Food</div>
 <nav class="foot-nav" id="foot-nav" aria-label="Footer"></nav>
 <div class="foot-info">
+<div>Vijayawada, Andhra Pradesh</div>
 <div>hello@atffood.com</div>
 <div>+91 99999 99999</div>
-<div>Vijayawada, Andhra Pradesh</div>
+<a href="https://wa.me/919999999999?text=Hi%20ATF!%20I%20am%20interested%20in%20your%20products." target="_blank" rel="noopener">WhatsApp</a>
 </div>
 </div>
-<div class="foot-end">© 2026 ATF Anytime Food Pvt. Ltd.</div>
-</div>
+<div class="wrap foot-end">© 2026 ATF Anytime Food Pvt. Ltd.</div>
 </footer>
 
 <button type="button" class="scrim" id="scrim" aria-label="Close cart" hidden></button>
 <aside class="drawer" id="drawer" hidden>
 <div class="drawer-top">
-<h2 class="gl">Your cart</h2>
-<button type="button" class="x" data-cart aria-label="Close cart">✕</button>
+<h2>Your cart</h2>
+<button type="button" class="x" data-cart>Close</button>
 </div>
 <div class="drawer-mid" id="cart-items"></div>
 <div class="drawer-end" id="cart-end" hidden>
-<div class="total" style="padding: 0 0 14px"><span>Total</span><span class="price" id="cart-total">₹0</span></div>
-<button type="button" class="btn red wide" data-go="checkout">Checkout</button>
+<div class="total"><span>Total</span><span id="cart-total">₹0</span></div>
+<button type="button" class="btn wide" data-go="checkout">Checkout</button>
 </div>
 </aside>
 
-<a href="https://wa.me/919999999999?text=Hi%20ATF!%20I%20am%20interested%20in%20your%20products." target="_blank" rel="noopener" class="wa" aria-label="Chat on WhatsApp">
-<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
-</a>
-
-</div>
 <script src="app.js"></script>
 </body>
 </html>
