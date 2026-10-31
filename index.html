@@ -7,7 +7,7 @@
 <meta name="description" content="Anytime Food makes Andhra chicken curry and biryani pastes in Vijayawada.">
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&family=Hanken+Grotesk:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tinos:ital@0;1&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -30,42 +30,57 @@
 </div>
 
 <header class="top" id="top">
-<nav class="links" id="links" aria-label="Main"></nav>
+<button type="button" class="burger" id="burger">Menu</button>
 <button type="button" class="logo-btn" data-go="home" aria-label="Anytime Food home">
 <img src="assets/logo.png" alt="Anytime Food">
 </button>
-<div class="top-right">
-<button type="button" class="burger" id="burger">Menu</button>
 <button type="button" class="cart-link" data-cart>Cart (<span id="cart-count">0</span>)</button>
-</div>
 </header>
 
 <div class="sheet" id="sheet" hidden></div>
 
 <main>
 <div data-page="home">
-<section class="hero">
-<div class="hero-text">
-<h1>Andhra cooking,<br>kept in a jar.</h1>
-<p>Curry and biryani pastes made in Vijayawada from whole spices, fresh coconut and sun-dried red chillies.</p>
-<button type="button" class="more" data-go="shop">See the pastes</button>
+<div class="offer" id="offer" hidden></div>
+<section class="open">
+<img class="open-img" src="assets/night-steam.jpg" alt="A pot simmering on the stove with steam rising into the dark">
+<div class="open-text">
+<h1>Anytime Food</h1>
+<p class="label">Andhra cooking, kept in a jar.</p>
+<button type="button" class="more" id="again" hidden></button>
 </div>
-<div class="hero-photo"><img src="assets/hero-chicken-curry.jpg" alt="Pan of spiced chicken curry with green chillies and coriander"></div>
+<span class="label open-cue" aria-hidden="true">Scroll</span>
 </section>
 
-<section class="range wrap reveal">
-<h2>The pastes</h2>
-<div class="pair-items" id="tiles"></div>
+<div class="after">
+<section class="lit-block">
+<p class="lit" data-lit>A proper meal shouldn't depend on how much time you have. The long part of the recipe goes in the jar. The rest takes minutes.</p>
 </section>
 
-<section class="wide reveal">
-<img src="assets/spices.jpg" alt="Whole and ground Indian spices with curry leaves">
+<section class="bleed rise">
+<img loading="lazy" src="assets/night-chicken.jpg" alt="Spiced chicken curry with green chillies and coriander">
+<div class="card">
+<h2>The recipe</h2>
+<p>Whole spices, fresh coconut and sun-dried red chillies.</p>
+</div>
 </section>
 
-<section class="note wrap reveal">
-<p>We started Anytime Food in Vijayawada because a proper meal shouldn't depend on how much time you have. The long part of the recipe goes in the jar. The rest takes minutes.</p>
+<section class="pieces" id="tiles"></section>
+
+<section class="lit-block">
+<p class="lit" data-lit>Made in Vijayawada, in the heart of Andhra cooking. Ready when you are, wherever you are in the world.</p>
 <button type="button" class="more" data-go="about">Our story</button>
 </section>
+
+<section class="stories wrap">
+<h2>From your kitchen</h2>
+<div id="stories"></div>
+<div class="acts">
+<a class="more" data-wa="Hi ATF! Here's what I cooked with your paste." href="#" target="_blank" rel="noopener">Send us your plate</a>
+<a class="more" data-wa="Hi ATF! Please tell me about new offers and products." href="#" target="_blank" rel="noopener">Hear about offers first</a>
+</div>
+</section>
+</div>
 </div>
 
 <div data-page="shop" hidden>
@@ -94,7 +109,7 @@
 <div class="reel-shade"></div>
 <div class="reel-cap"><span id="reel-tag"></span><div id="reel-title"></div></div>
 <button type="button" class="reel-play" id="reel-play" aria-label="Play the cooking video">
-<svg aria-hidden="true" width="22" height="22" viewBox="0 0 34 34" fill="#FBF7F0"><path d="M11 6.5v21a1.5 1.5 0 0 0 2.3 1.3l16-10.5a1.5 1.5 0 0 0 0-2.6l-16-10.5A1.5 1.5 0 0 0 11 6.5z"></path></svg>
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 34 34" fill="#F4EFE6"><path d="M11 6.5v21a1.5 1.5 0 0 0 2.3 1.3l16-10.5a1.5 1.5 0 0 0 0-2.6l-16-10.5A1.5 1.5 0 0 0 11 6.5z"></path></svg>
 </button>
 </div>
 <div class="reel-bar"><div class="reel-fill" id="reel-fill"></div></div>
@@ -119,7 +134,7 @@
 <p>We put the long part of the recipe in a jar, so a proper meal is never out of reach, wherever you are in the world.</p>
 <button type="button" class="more" data-go="contact">Contact us</button>
 </div>
-<div class="story-photo"><img src="assets/spices.jpg" alt="Whole and ground Indian spices"></div>
+<div class="story-photo"><img src="assets/night-spices.jpg" alt="Spoons of ground spices and whole peppercorns on a dark table"></div>
 </section>
 </div>
 </div>
@@ -130,7 +145,6 @@
 <section class="form-grid">
 <div class="info">
 <div><span class="key">Address</span>ATF Anytime Food Pvt. Ltd.<br>Vijayawada, Andhra Pradesh<br>India 520 001</div>
-<div><span class="key">Phone</span>+91 99999 99999</div>
 <div><span class="key">Email</span>hello@atffood.com</div>
 </div>
 <div>
@@ -160,8 +174,8 @@
 <div class="field"><label for="co-city">City</label><input id="co-city" class="input" type="text" autocomplete="address-level2"></div>
 <div class="field"><label for="co-pin">Pin code</label><input id="co-pin" class="input" type="text" autocomplete="postal-code"></div>
 </div>
-<button type="button" class="btn" id="co-place">Place order</button>
-<p id="co-note" class="soon" hidden>Online ordering isn't open yet, so no order was placed. Please message us on WhatsApp to order.</p>
+<button type="button" class="btn" id="co-place">Send order on WhatsApp</button>
+<p id="co-note" class="soon" hidden></p>
 </div>
 <div class="summary">
 <h2>Your order</h2>
@@ -180,8 +194,7 @@
 <div class="foot-info">
 <div>Vijayawada, Andhra Pradesh</div>
 <div>hello@atffood.com</div>
-<div>+91 99999 99999</div>
-<a href="https://wa.me/919999999999?text=Hi%20ATF!%20I%20am%20interested%20in%20your%20products." target="_blank" rel="noopener">WhatsApp</a>
+<a data-wa="Hi ATF! I am interested in your products." href="#" target="_blank" rel="noopener">WhatsApp</a>
 </div>
 </div>
 <div class="wrap foot-end">© 2026 ATF Anytime Food Pvt. Ltd.</div>
